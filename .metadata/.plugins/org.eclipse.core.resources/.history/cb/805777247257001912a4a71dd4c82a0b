@@ -1,0 +1,60 @@
+package Tests;
+
+import org.testng.annotations.Test;
+
+import Configuration.Configuration;
+import Data.TestData.HomePageData;
+import Data.TestData.LandingPageData;
+import Data.TestData.LoginData;
+import Pages.HomePage;
+import Pages.LandingPage;
+import Pages.LoginPage;
+
+public class EmployeeFeatures  extends Configuration {
+
+	
+		
+	
+	@Test(priority=1)
+	public void testLoginSuccess() throws Exception {
+		//tc01: verify that the user can successfully login
+		//Actions and validations
+		//1.launch URL
+		//2.Verify title
+		//3.Verify Email
+		//4.Verify Password
+		//5.Verify Title
+		LoginPage login= new LoginPage(super.driver,super.wait);
+		
+		HomePage home= new HomePage(super.driver, super.wait);
+		
+		login.launchUrl(LoginData.URL)
+		     .verifyTitle(LoginData.TITLE)
+		     .enterEmail(LoginData.EMAIL)
+		     .enterPassword(LoginData.PASSWORD)
+		     .clickLoginBtn();
+		home.verifyTitle(HomePageData.TITLE); //valida
+	
+	
+	
+		@Test(priority=1)
+		public void testLogOutSuccess() throws Exception {
+		    
+		LoginPage login= new LoginPage(super.driver,super.wait);
+		
+		HomePage home= new HomePage(super.driver, super.wait);
+		LandingPage lan= new LandingPage(super.driver, super.wait);
+		
+
+		login.launchUrl(LoginData.URL)
+	    .verifyTitle(LoginData.TITLE)
+	    .enterEmail(LoginData.EMAIL)
+	    .enterPassword(LoginData.PASSWORD)
+	    .clickLoginBtn();
+		home.verifyTitle(HomePageData.TITLE)
+		    .clickAccountBtn()
+		    .clickLogoutBtn();
+		lan.verifyTitle(LandingPageData.TITLE);
+		    
+	}
+	}

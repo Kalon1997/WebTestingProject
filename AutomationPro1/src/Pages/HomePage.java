@@ -1,0 +1,98 @@
+package Pages;
+
+import Locators.Login;
+
+import Locators.Home;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import static junit.framework.TestCase.assertEquals;
+
+public class HomePage 
+{
+	
+	WebDriver driver;
+	WebDriverWait wait;
+	
+	public HomePage(WebDriver driver, WebDriverWait wait)
+	{
+		this.driver=driver;
+		this.wait=wait;
+		
+	}
+	/*
+	public HomePage verifyTitle(String title) 
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Home.RESUME)));//load
+		assertEquals(title, driver.getTitle());
+		
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return this;
+	}
+	
+	*/
+	
+	public HomePage verifyTitle(String title)
+	{
+		assertEquals(title, driver.getTitle());
+		return this;
+	}
+	
+	public HomePage clickEmpBtn() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Home.EMPPLUSBTN)));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.cssSelector(Home.EMPPLUSBTN)).click();
+		return this;
+	}
+	
+	public HomePage clickAccountBtn() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Home.ACCOUNT)));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.cssSelector(Home.ACCOUNT)).click();
+		return this;
+	}
+
+	public HomePage clickLogoutBtn() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Home.LOGOUT)));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.cssSelector(Home.LOGOUT)).click();
+		return this;
+	}
+	public HomePage clickChangePasswordBtn() {
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Home.CHANGEPASSWORD)));
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		driver.findElement(By.cssSelector(Home.CHANGEPASSWORD)).click();
+		return this;
+	}
+	
+	
+	
+
+}

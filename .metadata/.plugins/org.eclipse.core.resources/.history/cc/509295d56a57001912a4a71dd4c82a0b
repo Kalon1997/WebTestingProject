@@ -1,0 +1,7 @@
+package Locators;
+
+public class Employee {
+	 public static final String ERESUME="#logoutForm > ul > li:nth-child(3) > a"; //CSS
+           
+
+}

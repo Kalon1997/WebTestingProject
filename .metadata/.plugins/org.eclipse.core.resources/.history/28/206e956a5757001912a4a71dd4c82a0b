@@ -1,0 +1,6 @@
+package Locators;
+
+public class Landing {
+	 public static final String CONTACT="body > div.navbar.navbar-default > div > div.navbar-collapse.collapse > ul:nth-child(1) > li:nth-child(1) > a";
+
+}

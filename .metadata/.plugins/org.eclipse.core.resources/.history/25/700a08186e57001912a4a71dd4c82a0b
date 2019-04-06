@@ -1,0 +1,41 @@
+package Pages;
+
+
+import Locators.Login;
+
+import Locators.Home;
+import Locators.Employee;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import static junit.framework.TestCase.assertEquals;
+
+public class EmployeePage
+{
+	
+	WebDriver driver;
+	WebDriverWait wait;
+	
+	public EmployeePage(WebDriver driver, WebDriverWait wait)
+	{
+		this.driver=driver;
+		this.wait=wait;
+		
+	}
+	
+	public EmployeePage verifyTitle(String title) 
+	{
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(Employee.ERESUME)));//load
+		assertEquals(title, driver.getTitle());   //is displayed validation methods
+		
+	/*	try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		*/
+		return this;
+	}
+}

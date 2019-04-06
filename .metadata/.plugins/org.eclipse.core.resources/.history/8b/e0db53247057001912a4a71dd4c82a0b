@@ -1,0 +1,10 @@
+package Locators;
+
+public class Employee {
+	 public static final String ERESUME="#logoutForm > ul > li:nth-child(3) > a", //CSS
+			 EMPNAMEDROPDOWNBTN="#Employment_Employer_chosen > a > span",
+			 EMPNAMEINPUT="//*[@id=\"Employment_Employer_chosen\"]/div/div/input",  //XPATH
+			 EMPNAMESELECT="//*[@id=\\\"Employment_Employer_chosen\\\"]/div/ul/li[1]";
+           
+
+}
