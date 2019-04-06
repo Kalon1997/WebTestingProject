@@ -38,5 +38,11 @@ public class TestData {
 		                           ERRORMSG="Incorrect password.",
 		                           TITLE="Change Password - CareerGraph";
 	}
+	public class VerifyData {
+		public static final String URL="https://careergraph.pexiscore.com/";
 	
 }
+}
+	
+	//PROFILE_NAME="",
+            //TITLE="KALON ACHARJEE - CareerGraph",

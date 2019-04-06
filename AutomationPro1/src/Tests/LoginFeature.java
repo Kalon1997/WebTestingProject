@@ -1,10 +1,12 @@
 package Tests;
+
 import Data.TestData.LoginData;
 
 import Data.TestData.HomePageData;
 
 import Pages.LoginPage;
 import Pages.HomePage;
+import Pages.IconVerifyPage;
 import Configuration.Configuration;
 import org.testng.annotations.Test;
 
@@ -23,10 +25,19 @@ public class LoginFeature extends Configuration
 		LoginPage login= new LoginPage(super.driver,super.wait);
 		
 		HomePage home= new HomePage(super.driver, super.wait);
+		IconVerifyPage icons = new IconVerifyPage(super.driver,super.wait);
 		
 		login.launchUrl(LoginData.URL)
-		     .verifyTitle(LoginData.TITLE)
-		     .enterEmail(LoginData.EMAIL)
+		     .verifyTitle(LoginData.TITLE);
+		     
+		     
+		     icons.checkcareerericon();
+				icons.checkcontacticon();
+				icons.checksubscribeicon();
+				icons.checkaboutusicon();
+		     
+		     
+		     login.enterEmail(LoginData.EMAIL)
 		     .enterPassword(LoginData.PASSWORD)
 		     .clickLoginBtn();
 		home.verifyTitle(HomePageData.TITLE); //valida
